@@ -69,7 +69,7 @@ static Layout layouts[] = {
 	{ "[ ]", fullscreen },
 };
 
-#define MOD  CTRL('b')
+#define MOD CTRL('g')
 
 #define TAGKEYS(KEY,TAG) \
 	{ { MOD, 'w', KEY,     }, { view,           { tags[TAG] }               } }, \
@@ -82,12 +82,12 @@ static KeyBinding bindings[] = {
 	/* { { MOD, 'n',          }, { create,         { NULL }                    } }, */
 	{ { MOD, 'c',          }, { create,         { NULL, NULL, "$CWD" }      } },
 	{ { MOD, 'q',          }, { killclient,     { NULL }                    } },
-	{ { CTRL('j'),         }, { focusnext,      { NULL }                    } },
+	{ { MOD, ',',          }, { focusnext,      { NULL }                    } },
+	{ { MOD, '.',          }, { focusprev,      { NULL }                    } },
 	{ { MOD, 'j',          }, { focusdown,      { NULL }                    } },
 	{ { MOD, 'k',          }, { focusup,        { NULL }                    } },
 	{ { MOD, 'h',          }, { focusleft,      { NULL }                    } },
 	{ { MOD, 'l',          }, { focusright,     { NULL }                    } },
-	{ { CTRL('k'),         }, { focusprev,      { NULL }                    } },
 	{ { MOD, 'y',          }, { setlayout,      { "[]=" }                   } },
 	{ { MOD, 'g',          }, { setlayout,      { "+++" }                   } },
 	{ { MOD, 't',          }, { setlayout,      { "TTT" }                   } },
@@ -95,8 +95,8 @@ static KeyBinding bindings[] = {
 	{ { MOD, ' ',          }, { zoom,           { NULL }                    } },
 	{ { MOD, 'o',          }, { incnmaster,     { "+1" }                    } },
 	{ { MOD, 'p',          }, { incnmaster,     { "-1" }                    } },
-	{ { CTRL('o'),         }, { setmfact,       { "-0.1" }                  } },
-	{ { CTRL('p'),         }, { setmfact,       { "+0.1" }                  } },
+	{ { MOD, '-',          }, { setmfact,       { "-0.1" }                  } },
+	{ { MOD, '=',          }, { setmfact,       { "+0.1" }                  } },
 	{ { MOD, ';',          }, { toggleminimize, { NULL }                    } },
 	{ { MOD, 's',          }, { togglebar,      { NULL }                    } },
 	{ { MOD, 'S',          }, { togglebarpos,   { NULL }                    } },
